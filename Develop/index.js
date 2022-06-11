@@ -83,7 +83,8 @@ inquirer.prompt([
 ).then(({
     title,
     Description,
-    Installation, 
+    Installation,
+    Usage, 
     Credits,
     Tests,
     Questions,
