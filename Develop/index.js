@@ -81,7 +81,7 @@ inquirer.prompt([
     {   
         type: 'checkbox',
         message: "Choose a color for your license badge:",
-        name: 'badge-color',
+        name: 'color',
         choices: ['brightgreen', 'blue', 'lightgrey', 'orange', 'yellow'],
     },
     {
@@ -107,6 +107,7 @@ inquirer.prompt([
     Contribution,
     Tests,
     license,
+    color,
     git,
     email
     
@@ -116,19 +117,28 @@ inquirer.prompt([
     
     const generateTemplate = 
         `# ${title}
-        ## Description:
+        ## Description
         ${Description}
-        ## Table of Contents:
-        ## Credits:
+
+        ## Table of Contents
+        [Description]
+        [Contribution]
+        [installation]
+        [Usage]
+        [Tests]
+        [License]
+        [Questions]
+
+        ## Credits
         ${Contribution}
-        ## Installation:
+        ## Installation
         ${Installation}
-        ## Usage:
+        ## Usage
         ${Usage}
-        ## Tests:
+        ## Tests
         ${Tests}
 
-        ![badge](https://img.shields.io/badge/license-${license}-brightgreen)
+        ![badge](https://img.shields.io/badge/license-${license}-${color})
 
         ## Questions:
         * Github:[${git}](https://github.com/${git})
@@ -137,28 +147,13 @@ inquirer.prompt([
         writeToFile(title, generateTemplate);
 
 });
-      
-      
-//console.log(answers));
-//generateMarkdown;
-//writeToFile();
-
-
-
-//writeToFile(filename, data);
-//(answers => console.log(answers));
-
-
-
 //const questions = [
 
 //];
 
 // TODO: Create a function to write README file
 function writeToFile(title, data) {
-    //generateMarkdown(data);
     fs.writeFileSync(`./${title}.md`, (data), (err) => {
-        
         if (err) {
             console.log(err);
         } else {
