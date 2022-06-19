@@ -3,13 +3,11 @@ console.log('Hello Node!');
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-const  renderLicenseSection = require('./utils/generateMarkdown');
-
-//const { renderLicenseBadge } = require('./utils/generateMarkdown');
-//const Choices = require('inquirer/lib/objects/choices');
+const  generateMarkdown = require('./utils/generateMarkdown');
+const renderLicenseSection = require('./utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
-
+function questions() {
 inquirer.prompt([ 
     
     {
@@ -62,12 +60,7 @@ inquirer.prompt([
         type: 'checkbox',
         message: "What license do you want to include?",
         name: 'license',
-        choices: ['MIT', 'Apache', 'Apache2', 'GPL', 'Other']
-       // validate: choices => {
-           // if (choices == 'Other') {
-                //return '';
-            //}
-        //}
+        choices: ['MIT', 'Apache', 'Apache2', 'GPLv2', 'GPLv3', 'Mozilla', 'None']
         //validate: choices => {
            // if (choices.length > 1) {
                // return true;
@@ -110,63 +103,82 @@ inquirer.prompt([
     color,
     git,
     email
-    
+//})
+
+//)
+//.then(( => {
+    //writeToFile(data);
+
+})=> {
+const generateTemplate = 
+`# ${title}
+## Description
+${Description}
+
+## Table of Contents
+[Description]
+[Contribution](#contribution)
+[Installation](#installation)
+[Usage](#usage)
+[Tests](#tests)
+[License](#license)
+[Questions](#questions)
+
+## Credits
+${Contribution}
+## Installation
+${Installation}
+## Usage
+${Usage}
+## Tests
+${Tests}
+## License
+${renderLicenseSection(license)}
 
 
-}) => {
-    
-    const generateTemplate = 
-        `# ${title}
-        ## Description
-        ${Description}
+## Questions:
+* Github:[${git}](https://github.com/${git})
+* Email: (${email})
+* Deployed Application: (https://${git}.github.io/${title}/) `;
+writeToFile(generateTemplate);
 
-        ## Table of Contents
-        [Description]
-        [Contribution]
-        [installation]
-        [Usage]
-        [Tests]
-        [License]
-        [Questions]
-
-        ## Credits
-        ${Contribution}
-        ## Installation
-        ${Installation}
-        ## Usage
-        ${Usage}
-        ## Tests
-        ${Tests}
-
-        ![badge](https://img.shields.io/badge/license-${license}-${color})
-
-        ## Questions:
-        * Github:[${git}](https://github.com/${git})
-        * Email: ${email}
-        * Deployed Application: `;
-        writeToFile(title, generateTemplate);
+//![badge](https://img.shields.io/badge/license-${license}-${color}) TESTING
 
 });
+}
+//} // TESTING FUNCTION
+
 //const questions = [
 
 //];
 
 // TODO: Create a function to write README file
-function writeToFile(title, data) {
-    fs.writeFileSync(`./${title}.md`, (data), (err) => {
+function writeToFile(data) {
+    fs.writeFileSync(`./README.md`, (data), generateMarkdown, (err) => {
         if (err) {
             console.log(err);
         } else {
-       console.log('Your README has been created');
+       console.log('Your README has been created!');
 }})
 };
-
+//inquirer.prompt();
 // TODO: Create a function to initialize app
-function init() {
+async function init() {
+    try {
+        await questions();
+        //console.log('QUESTIONS ANSWERED');
+
+        //await writeToFile(data);
   
+    
+} catch (error) {
+    console.error();
+}
 }
 
 // Function call to initialize app
 init();
 
-module.exports = writeToFile;
+//questions(); // TESTING
+
+//module.exports = writeToFile;
