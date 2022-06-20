@@ -124,10 +124,11 @@ ${Tests}
 ${renderLicenseSection(license)}
 
 
-## Questions:
+## Questions
 * Github:[${git}](https://github.com/${git})
 * Email: [email](${email})
-* Deployed Application: [deployed application](${deployed}) `;
+## Deployed Application: 
+${deployed} `;
 writeToFile(title, generateTemplate);
 
 //![badge](https://img.shields.io/badge/license-${license}-${color}) TESTING
