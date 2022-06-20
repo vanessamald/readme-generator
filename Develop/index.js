@@ -41,22 +41,14 @@ inquirer.prompt([
         name: "Usage",
         validate: (value) => { if (value) {return true} else { return'return value to continue'}} 
     },
+
     {   
         type: 'input',
         message: "Tests for your application:",
         name: "Tests",
         validate: (value) => { if (value) {return true} else { return'return value to continue'}} 
     },
-
-    
-    //{
-        //type: 'checkbox',
-        //message: "What languages did you use?",
-        //name: '',
-        //choices: ['HTML', 'CSS', 'JavaScript', 'Node.js', 'Express.js', 'SQL'],
-        //validate: (value) => { if (value) {return true}  else { return'return value to continue'}} 
-    //},
-        {   
+    {   
         type: 'checkbox',
         message: "What license do you want to include?",
         name: 'license',
@@ -68,14 +60,6 @@ inquirer.prompt([
                     //return 'Choice is not valid';
                
             //}
-        //}
-           
-    },
-    {   
-        type: 'checkbox',
-        message: "Choose a color for your license badge:",
-        name: 'color',
-        choices: ['brightgreen', 'blue', 'lightgrey', 'orange', 'yellow'],
     },
     {
         type: 'input',
@@ -88,6 +72,11 @@ inquirer.prompt([
         message: "Email:",
         name: 'email',
         validate: (value) => { if (value) {return true} else { return'return value to continue'}} 
+    },
+    {
+        type: 'input',
+        message: 'Add a link to your deployed application:',
+        name: 'deployed'
     }
 
 ]
@@ -100,9 +89,9 @@ inquirer.prompt([
     Contribution,
     Tests,
     license,
-    color,
     git,
-    email
+    email,
+    deployed
 //})
 
 //)
@@ -116,13 +105,12 @@ const generateTemplate =
 ${Description}
 
 ## Table of Contents
-[Description]
-[Contribution](#contribution)
-[Installation](#installation)
-[Usage](#usage)
-[Tests](#tests)
-[License](#license)
-[Questions](#questions)
+* [Contribution](#credits)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Tests](#tests)
+* [License](#license)
+* [Questions](#questions)
 
 ## Credits
 ${Contribution}
@@ -138,9 +126,9 @@ ${renderLicenseSection(license)}
 
 ## Questions:
 * Github:[${git}](https://github.com/${git})
-* Email: (${email})
-* Deployed Application: (https://${git}.github.io/${title}/) `;
-writeToFile(generateTemplate);
+* Email: [email](${email})
+* Deployed Application: [deployed application](${deployed}) `;
+writeToFile(title, generateTemplate);
 
 //![badge](https://img.shields.io/badge/license-${license}-${color}) TESTING
 
@@ -153,12 +141,13 @@ writeToFile(generateTemplate);
 //];
 
 // TODO: Create a function to write README file
-function writeToFile(data) {
-    fs.writeFileSync(`./README.md`, (data), generateMarkdown, (err) => {
+function writeToFile( title, data) {
+    fs.writeFileSync(`./${title}.md`, (data), generateMarkdown, (err) => {
+        console.log('Your README has been created!');
         if (err) {
             console.log(err);
-        } else {
-       console.log('Your README has been created!');
+        //} else {
+       
 }})
 };
 //inquirer.prompt();

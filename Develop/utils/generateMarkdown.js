@@ -1,4 +1,3 @@
-
 const license = require('../index');
 
 // TODO: Create a function that returns a license badge based on which license is passed in
@@ -48,9 +47,9 @@ function renderLicenseSection(license) {
   if (license === 'None') {
     return ''
     } else {
-    return `##License:
-    ${ renderLicenseBadge(license)}
-    ${ renderLicenseLink(license)}`
+  return `
+  ${ renderLicenseBadge(license)}
+  ${ renderLicenseLink(license)}`
   }
 }
 
