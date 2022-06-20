@@ -78,7 +78,6 @@ inquirer.prompt([
         message: 'Add a link to your deployed application:',
         name: 'deployed'
     }
-
 ]
 ).then(({
     
@@ -92,7 +91,7 @@ inquirer.prompt([
     git,
     email,
     deployed
-    
+
 // TODO: Create a function to generate markdown for README   
 })=> {
 const generateTemplate = 
