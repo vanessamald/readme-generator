@@ -53,44 +53,4 @@ function renderLicenseSection(license) {
   }
 }
 
-
-// TODO: Create a function to generate markdown for README
-/*
-function generateMarkdown(data) {
-const badgeColor = color;
-const generateTemplate = 
-`# ${title}
-## Description
-${Description}
-
-## Table of Contents
-[Description]
-[Contribution](#contribution)
-[Installation](#installation)
-[Usage](#usage)
-[Tests](#tests)
-[License](#license)
-[Questions](#questions)
-
-## Credits
-${Contribution}
-## Installation
-${Installation}
-## Usage
-${Usage}
-## Tests
-${Tests}
-## License
-${renderLicenseSection(license)}
-
-## Questions:
-* Github:[${git}](https://github.com/${git})
-* Email: (${email})
-* Deployed Application: (https://${git}.github.io/${title}/) `;
-writeToFile(title, generateTemplate);
-}
-*/
-
-
-
 module.exports = renderLicenseSection;

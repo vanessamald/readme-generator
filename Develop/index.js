@@ -92,12 +92,8 @@ inquirer.prompt([
     git,
     email,
     deployed
-//})
-
-//)
-//.then(( => {
-    //writeToFile(data);
-
+    
+// TODO: Create a function to generate markdown for README   
 })=> {
 const generateTemplate = 
 `# ${title}
@@ -130,45 +126,26 @@ ${renderLicenseSection(license)}
 ## Deployed Application: 
 ${deployed} `;
 writeToFile(title, generateTemplate);
-
-//![badge](https://img.shields.io/badge/license-${license}-${color}) TESTING
-
 });
 }
-//} // TESTING FUNCTION
-
-//const questions = [
-
-//];
 
 // TODO: Create a function to write README file
 function writeToFile( title, data) {
     fs.writeFileSync(`./${title}.md`, (data), generateMarkdown, (err) => {
         console.log('Your README has been created!');
         if (err) {
-            console.log(err);
-        //} else {
-       
-}})
+            console.log(err);      
+    }})
 };
-//inquirer.prompt();
+
 // TODO: Create a function to initialize app
 async function init() {
     try {
-        await questions();
-        //console.log('QUESTIONS ANSWERED');
-
-        //await writeToFile(data);
-  
-    
-} catch (error) {
+        await questions();   
+    } catch (error) {
     console.error();
-}
+    }
 }
 
 // Function call to initialize app
 init();
-
-//questions(); // TESTING
-
-//module.exports = writeToFile;
