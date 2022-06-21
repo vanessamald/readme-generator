@@ -1,6 +1,6 @@
-# SAMPLE
+# Sample
 ## Description
-TESTING
+testing here
 
 ## Table of Contents
 * [Contribution](#credits)
@@ -11,21 +11,21 @@ TESTING
 * [Questions](#questions)
 
 ## Credits
-TESTING
+testing
 ## Installation
-TESTING
+testing
 ## Usage
-TESTING
+testing
 ## Tests
-TESTING
+testing
 ## License
 
-  [![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
-  https://opensource.org/licenses/MIT
+  [![License: GPL v2](https://img.shields.io/badge/License-GPL_v2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
+  https://opensource.org/licenses/GPL-2.0
 
 
 ## Questions
-* Github:[TESTING](https://github.com/TESTING)
-* Email: [email](TESTING )
+* Github:[testing](https://github.com/testing)
+* Email: [email](testing@gmail.com)
 ## Deployed Application: 
-TESTING 
+testing.com 

@@ -115,7 +115,7 @@ ${renderLicenseSection(license)}
 ## Questions
 * Github:[${git}](https://github.com/${git})
 * Email: [email](${email})
-## Deployed Application: 
+## Deployed Application 
 ${deployed} `;
 writeToFile(title, generateTemplate);
 });
