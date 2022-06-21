@@ -53,13 +53,6 @@ inquirer.prompt([
         message: "What license do you want to include?",
         name: 'license',
         choices: ['MIT', 'Apache', 'Apache2', 'GPLv2', 'GPLv3', 'Mozilla', 'None']
-        //validate: choices => {
-           // if (choices.length > 1) {
-               // return true;
-                //}else {
-                    //return 'Choice is not valid';
-               
-            //}
     },
     {
         type: 'input',

@@ -1,6 +1,6 @@
-# Sample
+# SAMPLE
 ## Description
-This is a test
+TESTING
 
 ## Table of Contents
 * [Contribution](#credits)
@@ -11,13 +11,13 @@ This is a test
 * [Questions](#questions)
 
 ## Credits
-testing
+TESTING
 ## Installation
-testing
+TESTING
 ## Usage
-testing
+TESTING
 ## Tests
-testing
+TESTING
 ## License
 
   [![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
@@ -25,7 +25,7 @@ testing
 
 
 ## Questions
-* Github:[test](https://github.com/test)
-* Email: [email](test@gmail.com)
+* Github:[TESTING](https://github.com/TESTING)
+* Email: [email](TESTING )
 ## Deployed Application: 
-test.com 
+TESTING 
