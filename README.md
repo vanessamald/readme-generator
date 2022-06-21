@@ -28,8 +28,3 @@ No tests required
 ## Questions
 * Github:[vanessamald](https://github.com/vanessamald)
 * Email: [email](vanessa.rodriguez3@mavs.uta.edu)
-
-## Deployed Application
-
-
- 
